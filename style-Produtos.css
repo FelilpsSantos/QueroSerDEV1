@@ -1,0 +1,235 @@
+
+header {
+	background-color: #C3C3C3 ;
+	
+	padding: 5px 0;
+
+}
+
+
+h1 {
+	cursor: pointer;
+	}
+
+header img {
+	
+	max-width: 300px; 
+	width: 90%;
+}
+
+
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-image: linear-gradient(to bottom,#C3C3C3, #242424);
+	background-attachment: fixed;
+	
+}
+
+
+.caixa {
+
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+
+
+nav {
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #C78C19;
+	text-decoration: underline;
+}
+
+.produtos {
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.produtos li {
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	border: 2px solid #000000;
+	border-radius: 10px;
+}
+
+.produtos li:hover {
+	border-color: #C78C19;
+}
+
+.produtos li:active {
+	border-color: #088C19;	
+}
+
+.produtos li:hover h2 {
+	font-size: 34px;
+}
+
+.produtos h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.produto-descricao {
+	font-size: 18px;
+}
+
+.produto-preco {
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+footer {
+	text-align: center;
+
+	padding: 40px 0;
+}
+
+.copyright {
+	color: #FFFFFF;
+	font-size: 13px;
+	margin: 20px 0 0;
+	
+}
+
+main {
+	text-align: center;
+	color: white;
+	
+}
+
+form {
+	margin: 40px 0;
+}
+
+form label, form legend {
+	display:block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+.input-padrao {
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%;
+}
+
+.checkbox {
+	margin: 20px 0;
+}
+
+
+
+
+table {
+	margin: 20px 0 40px;
+}
+
+thead {
+	background: #242424;
+	color: white;
+	font-weight: bold;
+}
+
+td, th {
+	border: 1px solid #000000;
+	padding: 8px 15px;
+}
+
+
+/* css da página inicial */
+.ImagemDoMeio {
+	
+	background: url(../JS/ImagemDoMeio.jpg);
+	background-size: cover;
+	width: 99vw;
+	height: 45vh;
+	background-repeat: no-repeat;
+	
+
+}
+
+
+.titulo-principal.ValorKit {
+	text-align: center;
+	font-size: 5em;
+	margin: 0 0 1em;
+	clear: left;
+	border: 1px solid black
+}
+
+.principal {
+	padding: 5em 0;
+	width: 940px;
+	margin: 0 auto;
+}
+
+.principal p {
+	margin: 0 0 1em;
+}
+
+.principal strong {
+	font-weight: bold;
+}
+
+.principal em {
+	font-style: italic;
+}
+
+.Cartazes {
+	width: 140px;
+	margin: 0 20px 20px 0;
+	cursor: pointer;
+}
+
+
+
+.ComprarCartazes {
+	font-family: 'Montserrat', sans-serif;
+
+	width:20%;
+	padding: 20px ;
+	background:#CF0D0D;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	border-radius: 6px;
+	transition: 1s all;
+	cursor: pointer;
+	
+}
+
+.ComprarCartazes:hover {
+	align-items: center;
+	background: #992d2d;
+	transform: scale(1.2);
+}

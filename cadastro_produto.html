@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto do Nerd | Cadastro de produto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./assets/css/base/base.css">
+  
+    <link rel="stylesheet" href="./assets/css/componentes/cartao.css">
+    <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
+    <link rel="stylesheet" href="./assets/css/componentes/botao.css">
+    <link rel="stylesheet" href="./assets/css/cadastro_produto.css">
+
+    <script src="./js/app.js" type="module"></script>
+    <script src="https://github.com/codermarcos/simple-mask-money/releases/download/v3.0.0/simple-mask-money.js"> </script>
+
+</head>
+<body>
+    <header class="cabecalho container">
+        
+       
+        </nav>
+    </header>
+    <main class="container flex flex--centro flex--coluna">
+        <section class="cartao cadastro">
+            <h1 class="cartao__titulo">Cadastrar um produto</h1>
+            <form action="./cadastro_produto.html" class="flex flex--coluna">
+                <div class="input-container">
+                    <input name="nome" id="nome" class="input" type="text" placeholder="Nome" data-tipo="nome" required>
+                    <label class="input-label" for="nome">Nome</label>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
+                </div>
+
+                <div class="input-container cadastro__descricao-container">
+                    <input class="input" name="descricao" id="descricao" placeholder="Descrição">
+                    <label class="input-label" for="descricao">Descrição</label>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
+                </div>
+
+                <div class="input-container">
+                    <input categoria="categoria" id="nome" class="input" type="text" placeholder="categoria" data-tipo="categoria" required>
+                    <label class="input-label" for="Categoria">Categoria</label>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
+                </div>
+                <div class="input-container cadastro__preco-container">
+                    <input name="preco" id="preco" class="input" type="text" placeholder="Preço" data-tipo="preco" required>
+                    <label class="input-label" for="preco">Preço</label>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
+                </div>
+                
+                <button onclick="createProduct()" class="botao">Cadastrar produto</button>
+                <button class="botao"><a href="./Home.html">Cancelar</a></li>
+
+                  
+            </form>
+        </section>
+    </main>
+    
+ 
+<script>
+  function createProduct() {
+      let nome = document.querySelector('#nome').value
+      let descricao = document.querySelector('#descricao').value
+      let categoria = document.querySelector('#categoria').value
+      let preco = document.querySelector('#preco').value
+
+      let data = {
+        nome: nome,
+        descricao: descricao,
+        categoria: categoria,
+        preco: preco
+      }
+
+      axios({
+        method: 'post',
+        url: 'http://localhost:3005/produtos',
+        responseType: 'stream',
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        data: {
+          nome: nome,
+          descricao: descricao,
+          categoria: categoria,
+          preco: Number(preco)
+        }
+      })
+        .then(function (response) {
+          console.log(response)
+          let { message, status, data } = response.data
+
+          if (status == 'erro') return alert(message)
+
+          alert('Produto cadastrado com sucesso!')
+          window.location.href = './Home.html'
+        })
+        .catch(function (error) {
+          console.error(error)
+        })
+    }
+</script>
+    
+</body>
+</html>
